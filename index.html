@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="kk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QEMEL kids — балалар оқу орталығы</title>
+<meta name="description" content="QEMEL kids — дайындық тобынан 1–4 сыныпқа дейінгі балаларға арналған заманауи оқу орталығы. Ағылшын тілі, математика, робототехника, сауатты жазу.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#3d7bff;
+    --blue-dark:#2b5fd0;
+    --yellow:#ffc93c;
+    --pink:#ff6ba6;
+    --mint:#38d6c3;
+    --purple:#8b7cff;
+    --ink:#1f2a44;
+    --muted:#5b6a86;
+    --bg:#fbfcff;
+    --card:#ffffff;
+    --shadow:0 18px 45px rgba(45,70,140,.12);
+    --shadow-sm:0 8px 22px rgba(45,70,140,.10);
+    --radius:26px;
+    --radius-sm:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Nunito',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.logo,.brand{font-family:'Baloo 2','Nunito',sans-serif;line-height:1.15}
+  .wrap{width:min(1150px,92%);margin:0 auto}
+  section{padding:76px 0;position:relative}
+  .eyebrow{display:inline-block;font-weight:800;color:var(--blue);
+    background:rgba(61,123,255,.10);padding:7px 16px;border-radius:100px;
+    font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;margin-bottom:14px}
+  h2.title{font-size:clamp(1.7rem,4.5vw,2.7rem);font-weight:800;margin-bottom:12px}
+  .lead{color:var(--muted);font-size:1.08rem;max-width:620px}
+  .center{text-align:center}
+  .center .lead{margin-inline:auto}
+
+  /* Buttons */
+  .btn{display:inline-flex;align-items:center;gap:9px;border:none;cursor:pointer;
+    font-family:inherit;font-weight:800;font-size:1rem;padding:15px 28px;
+    border-radius:100px;text-decoration:none;transition:transform .18s ease,box-shadow .18s ease;
+    box-shadow:0 10px 24px rgba(61,123,255,.28)}
+  .btn:hover{transform:translateY(-3px)}
+  .btn-primary{background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff}
+  .btn-wa{background:linear-gradient(135deg,#25d366,#1ebe5b);color:#fff;box-shadow:0 10px 24px rgba(37,211,102,.30)}
+  .btn-ghost{background:#fff;color:var(--ink);box-shadow:var(--shadow-sm)}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:100;backdrop-filter:blur(10px);
+    background:rgba(251,252,255,.82);border-bottom:1px solid rgba(45,70,140,.07)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.4rem;color:var(--ink);text-decoration:none}
+  .logo .dot{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;
+    background:linear-gradient(135deg,var(--yellow),var(--pink));font-size:1.2rem}
+  .logo b{color:var(--blue)}
+  .nav-links{display:flex;gap:26px;align-items:center}
+  .nav-links a{color:var(--ink);text-decoration:none;font-weight:600;font-size:.98rem;opacity:.85}
+  .nav-links a:hover{opacity:1;color:var(--blue)}
+  .nav-right{display:flex;align-items:center;gap:12px}
+  .lang{display:flex;background:#eef2fb;border-radius:100px;padding:4px;gap:2px}
+  .lang button{border:none;background:none;cursor:pointer;font-family:inherit;font-weight:800;
+    font-size:.85rem;padding:6px 13px;border-radius:100px;color:var(--muted)}
+  .lang button.on{background:#fff;color:var(--blue);box-shadow:var(--shadow-sm)}
+  .burger{display:none;background:none;border:none;cursor:pointer;font-size:1.7rem;color:var(--ink)}
+
+  /* Hero */
+  .hero{padding-top:40px;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+  .hero h1{font-size:clamp(2.1rem,5.6vw,3.7rem);font-weight:800;margin-bottom:18px}
+  .hero h1 span{color:var(--blue)}
+  .hero .lead{font-size:1.15rem;margin-bottom:28px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-badges{display:flex;gap:22px;margin-top:30px;flex-wrap:wrap}
+  .hero-badges div{font-weight:800;color:var(--ink)}
+  .hero-badges span{display:block;font-size:1.7rem;color:var(--blue);font-family:'Baloo 2'}
+  .hero-badges small{color:var(--muted);font-weight:600}
+  .hero-art{position:relative;aspect-ratio:1/1;display:grid;place-items:center}
+  .blob{position:absolute;inset:0;background:linear-gradient(135deg,var(--blue),var(--purple));
+    border-radius:42% 58% 60% 40%/48% 42% 58% 52%;animation:morph 9s ease-in-out infinite}
+  @keyframes morph{0%,100%{border-radius:42% 58% 60% 40%/48% 42% 58% 52%}
+    50%{border-radius:58% 42% 40% 60%/52% 58% 42% 48%}}
+  .hero-art .emoji{position:relative;font-size:clamp(6rem,16vw,11rem);filter:drop-shadow(0 12px 18px rgba(0,0,0,.18))}
+  .float{position:absolute;background:#fff;border-radius:18px;padding:12px 16px;box-shadow:var(--shadow);
+    font-weight:800;font-size:.95rem;display:flex;align-items:center;gap:8px;animation:floaty 4s ease-in-out infinite}
+  .float .ic{font-size:1.3rem}
+  .float.f1{top:8%;left:-4%}
+  .float.f2{bottom:14%;right:-6%;animation-delay:1.2s}
+  .float.f3{bottom:-2%;left:12%;animation-delay:2.1s}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+  /* Courses */
+  .grid{display:grid;gap:22px}
+  .courses-grid{grid-template-columns:repeat(3,1fr);margin-top:38px}
+  .card{background:var(--card);border-radius:var(--radius);padding:30px 26px;box-shadow:var(--shadow-sm);
+    border:1px solid rgba(45,70,140,.05);transition:transform .2s ease,box-shadow .2s ease}
+  .card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .card .ico{width:60px;height:60px;border-radius:18px;display:grid;place-items:center;font-size:1.9rem;margin-bottom:16px}
+  .card h3{font-size:1.28rem;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:.98rem}
+  .c1 .ico{background:rgba(61,123,255,.14)}
+  .c2 .ico{background:rgba(255,201,60,.20)}
+  .c3 .ico{background:rgba(139,124,255,.16)}
+  .c4 .ico{background:rgba(56,214,195,.18)}
+  .c5 .ico{background:rgba(255,107,166,.16)}
+
+  /* Camp */
+  .camp{background:linear-gradient(135deg,#fff4e0,#ffe9f2);border-radius:38px;padding:56px 44px;
+    display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center;overflow:hidden}
+  .camp .emoji-big{font-size:clamp(5rem,13vw,9rem);text-align:center}
+  .camp h2{font-size:clamp(1.6rem,4vw,2.4rem)}
+  .camp ul{list-style:none;margin:18px 0 26px}
+  .camp li{padding:6px 0 6px 30px;position:relative;font-weight:600}
+  .camp li::before{content:"☀️";position:absolute;left:0}
+
+  /* Teachers / advantages */
+  .feat-grid{grid-template-columns:repeat(3,1fr);margin-top:38px}
+  .feat{text-align:center;padding:34px 24px}
+  .feat .ico{margin-inline:auto}
+  .adv-grid{grid-template-columns:repeat(3,1fr);margin-top:38px}
+  .adv{display:flex;gap:15px;align-items:flex-start;background:var(--card);border-radius:var(--radius-sm);
+    padding:22px;box-shadow:var(--shadow-sm)}
+  .adv .ic{font-size:1.7rem;flex-shrink:0}
+  .adv h3{font-size:1.08rem;margin-bottom:3px}
+  .adv p{color:var(--muted);font-size:.92rem}
+
+  /* Reviews */
+  .rev-grid{grid-template-columns:repeat(3,1fr);margin-top:38px}
+  .rev{background:var(--card);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow-sm);position:relative}
+  .rev .stars{color:var(--yellow);font-size:1.05rem;margin-bottom:12px}
+  .rev p{font-size:1rem;margin-bottom:16px}
+  .rev .who{display:flex;align-items:center;gap:12px}
+  .rev .av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-size:1.3rem;
+    background:linear-gradient(135deg,var(--mint),var(--blue));color:#fff;font-weight:800}
+  .rev .who b{display:block;font-size:.98rem}
+  .rev .who small{color:var(--muted)}
+
+  /* Contact */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:38px}
+  .form-box{background:var(--card);border-radius:var(--radius);padding:34px;box-shadow:var(--shadow)}
+  .form-box label{display:block;font-weight:700;margin:14px 0 6px;font-size:.95rem}
+  .form-box input{width:100%;padding:14px 16px;border:2px solid #e6ebf5;border-radius:14px;
+    font-family:inherit;font-size:1rem;transition:border-color .15s}
+  .form-box input:focus{outline:none;border-color:var(--blue)}
+  .form-box .btn{width:100%;justify-content:center;margin-top:22px}
+  .form-note{font-size:.85rem;color:var(--muted);margin-top:12px;text-align:center}
+  .info-list{display:flex;flex-direction:column;gap:16px}
+  .info{display:flex;gap:15px;align-items:center;background:var(--card);border-radius:var(--radius-sm);
+    padding:18px 22px;box-shadow:var(--shadow-sm)}
+  .info .ic{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-size:1.4rem;
+    background:rgba(61,123,255,.12);flex-shrink:0}
+  .info b{display:block}
+  .info a,.info span{color:var(--muted);text-decoration:none}
+  .info a:hover{color:var(--blue)}
+  .socials{display:flex;gap:12px;margin-top:4px}
+
+  /* Footer */
+  footer{background:var(--ink);color:#fff;padding:50px 0 30px;text-align:center}
+  footer .logo{color:#fff;justify-content:center;margin-bottom:14px}
+  footer .logo b{color:var(--yellow)}
+  footer p{opacity:.7;font-size:.92rem}
+  footer .fnav{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin:18px 0}
+  footer .fnav a{color:#fff;opacity:.8;text-decoration:none;font-weight:600;font-size:.95rem}
+  footer .fnav a:hover{opacity:1;color:var(--yellow)}
+
+  /* Reveal animation */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* Mobile */
+  @media(max-width:900px){
+    .hero-grid{grid-template-columns:1fr;text-align:center}
+    .hero .lead{margin-inline:auto}
+    .hero-cta,.hero-badges{justify-content:center}
+    .hero-art{max-width:360px;margin:0 auto;order:-1}
+    .courses-grid,.feat-grid,.adv-grid,.rev-grid{grid-template-columns:1fr 1fr}
+    .camp{grid-template-columns:1fr;text-align:center;padding:40px 26px}
+    .camp .emoji-big{order:-1}
+    .camp li{display:inline-block;text-align:left}
+    .contact-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:620px){
+    section{padding:56px 0}
+    .nav-links{display:none}
+    .burger{display:block}
+    .courses-grid,.feat-grid,.adv-grid,.rev-grid{grid-template-columns:1fr}
+    .float{display:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ БАПТАУ: осы жерге өз мәліметтеріңізді жазасыз ============ -->
+<script>
+  // ↓↓↓ Тоғжан, дайын болғанда мына жерді өзгертіңіз ↓↓↓
+  const CONFIG = {
+    whatsapp: "77000000000",   // WhatsApp нөмірі (халықаралық форматта, + белгісіз)
+    instagram: "https://instagram.com/qemel.kids",  // Instagram сілтемесі
+    phone: "+7 700 000 00 00", // Көрсетілетін телефон нөмірі
+    address: "Қала, көше, үй №",   // Мекенжай
+    hours: "Дс–Сб, 09:00–19:00"    // Жұмыс уақыты
+  };
+</script>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo"><span class="dot">🎓</span> QEMEL <b>kids</b></a>
+    <nav class="nav-links" id="navlinks">
+      <a href="#about" data-kz="Біз туралы" data-ru="О нас">Біз туралы</a>
+      <a href="#courses" data-kz="Курстар" data-ru="Курсы">Курстар</a>
+      <a href="#camp" data-kz="Жазғы лагерь" data-ru="Летний лагерь">Жазғы лагерь</a>
+      <a href="#reviews" data-kz="Пікірлер" data-ru="Отзывы">Пікірлер</a>
+      <a href="#contact" data-kz="Байланыс" data-ru="Контакты">Байланыс</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang">
+        <button data-lang="kk" class="on">ҚАЗ</button>
+        <button data-lang="ru">РУС</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <span class="eyebrow" data-kz="Дайындық тобы – 1–4 сынып" data-ru="Подготовка – 1–4 класс">Дайындық тобы – 1–4 сынып</span>
+      <h1 data-kz="Балаңыздың жарқын болашағы — <span>QEMEL kids</span>-те басталады"
+          data-ru="Светлое будущее вашего ребёнка начинается в <span>QEMEL kids</span>">
+          Балаңыздың жарқын болашағы — <span>QEMEL kids</span>-те басталады</h1>
+      <p class="lead"
+         data-kz="Дайындық тобынан 1–4 сыныпқа дейінгі балаларға арналған заманауи оқу орталығы. Білікті ұстаздар, жеке көзқарас және балаға қызық сабақтар."
+         data-ru="Современный образовательный центр для детей от подготовительной группы до 4 класса. Опытные педагоги, индивидуальный подход и увлекательные занятия.">
+         Дайындық тобынан 1–4 сыныпқа дейінгі балаларға арналған заманауи оқу орталығы. Білікті ұстаздар, жеке көзқарас және балаға қызық сабақтар.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary" data-kz="Балаңызды жазу" data-ru="Записать ребёнка">Балаңызды жазу</a>
+        <a href="#courses" class="btn btn-ghost" data-kz="Курстарды көру" data-ru="Наши курсы">Курстарды көру</a>
+      </div>
+      <div class="hero-badges">
+        <div><span>5+</span><small data-kz="бағдарлама" data-ru="программ">бағдарлама</small></div>
+        <div><span>1–4</span><small data-kz="сынып" data-ru="класс">сынып</small></div>
+        <div><span>☀️</span><small data-kz="жазғы лагерь" data-ru="летний лагерь">жазғы лагерь</small></div>
+      </div>
+    </div>
+    <div class="hero-art reveal">
+      <div class="blob"></div>
+      <div class="emoji">🧒📚</div>
+      <div class="float f1"><span class="ic">🔤</span> <span data-kz="Ағылшын" data-ru="Английский">Ағылшын</span></div>
+      <div class="float f2"><span class="ic">🤖</span> <span data-kz="Робототехника" data-ru="Робототехника">Робототехника</span></div>
+      <div class="float f3"><span class="ic">➗</span> <span data-kz="Математика" data-ru="Математика">Математика</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap center">
+    <span class="eyebrow reveal" data-kz="Біз туралы" data-ru="О нас">Біз туралы</span>
+    <h2 class="title reveal" data-kz="QEMEL kids — балалардың сүйікті мекені" data-ru="QEMEL kids — любимое место детей">QEMEL kids — балалардың сүйікті мекені</h2>
+    <p class="lead reveal"
+       data-kz="Біз әр баланың бойындағы қабілетті ашуға көмектесеміз. Балалар бізде білім алып қана қоймайды — олар ойлауды, шығармашылықты және өзіне сенімді болуды үйренеді. Әр сабақ қызық ойын мен нақты нәтижеге негізделген."
+       data-ru="Мы помогаем раскрыть способности каждого ребёнка. Дети у нас не только получают знания — они учатся мыслить, творить и быть уверенными в себе. Каждое занятие построено на игре и реальном результате.">
+       Біз әр баланың бойындағы қабілетті ашуға көмектесеміз. Балалар бізде білім алып қана қоймайды — олар ойлауды, шығармашылықты және өзіне сенімді болуды үйренеді. Әр сабақ қызық ойын мен нақты нәтижеге негізделген.</p>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section id="courses" style="background:#f4f7ff">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow reveal" data-kz="Бағдарламалар" data-ru="Программы">Бағдарламалар</span>
+      <h2 class="title reveal" data-kz="Біздің курстар" data-ru="Наши курсы">Біздің курстар</h2>
+      <p class="lead reveal center" data-kz="Балаңызға қажет бағытты таңдаңыз" data-ru="Выберите нужное направление для вашего ребёнка">Балаңызға қажет бағытты таңдаңыз</p>
+    </div>
+    <div class="grid courses-grid">
+      <div class="card c1 reveal"><div class="ico">🔤</div>
+        <h3 data-kz="Ағылшын тілі" data-ru="Английский язык">Ағылшын тілі</h3>
+        <p data-kz="Балалар ойын арқылы ағылшынша сөйлеуді, тыңдап түсінуді үйренеді." data-ru="Дети учатся говорить и понимать английский через игру.">Балалар ойын арқылы ағылшынша сөйлеуді, тыңдап түсінуді үйренеді.</p></div>
+      <div class="card c2 reveal"><div class="ico">➗</div>
+        <h3 data-kz="Математика" data-ru="Математика">Математика</h3>
+        <p data-kz="Логика мен есептеу дағдысын дамытамыз. Сандармен дос болу оңай!" data-ru="Развиваем логику и навыки счёта. С числами дружить легко!">Логика мен есептеу дағдысын дамытамыз. Сандармен дос болу оңай!</p></div>
+      <div class="card c3 reveal"><div class="ico">🤖</div>
+        <h3 data-kz="Робототехника" data-ru="Робототехника">Робототехника</h3>
+        <p data-kz="Балалар өз қолымен робот құрастырып, инженерлік ойлауды меңгереді." data-ru="Дети своими руками собирают роботов и осваивают инженерное мышление.">Балалар өз қолымен робот құрастырып, инженерлік ойлауды меңгереді.</p></div>
+      <div class="card c4 reveal"><div class="ico">📚</div>
+        <h3 data-kz="Қосымша білім беру" data-ru="Дополнительное образование">Қосымша білім беру</h3>
+        <p data-kz="Баланың жан-жақты дамуына арналған қосымша дамытушы сабақтар." data-ru="Дополнительные развивающие занятия для всестороннего развития ребёнка.">Баланың жан-жақты дамуына арналған қосымша дамытушы сабақтар.</p></div>
+      <div class="card c5 reveal"><div class="ico">✍️</div>
+        <h3 data-kz="Сауатты жазу" data-ru="Грамотное письмо">Сауатты жазу</h3>
+        <p data-kz="Оқу техникасын дамыту, көркем жазу, диктант пен мәтінмен жұмыс, дамытушы ойындар және логикалық тапсырмалар." data-ru="Развитие техники чтения, каллиграфия, работа с диктантом и текстом, развивающие игры и логические задания.">Оқу техникасын дамыту, көркем жазу, диктант пен мәтінмен жұмыс, дамытушы ойындар және логикалық тапсырмалар.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CAMP -->
+<section id="camp">
+  <div class="wrap">
+    <div class="camp reveal">
+      <div>
+        <span class="eyebrow" data-kz="Жазда" data-ru="Летом">Жазда</span>
+        <h2 data-kz="Жазғы лагерь ☀️" data-ru="Летний лагерь ☀️">Жазғы лагерь ☀️</h2>
+        <p class="lead" data-kz="Жазғы демалыс — қызық та пайдалы! Балаларыңыз жаңа дос табады, дамиды және көңілді уақыт өткізеді." data-ru="Летние каникулы — весело и с пользой! Дети находят новых друзей, развиваются и отлично проводят время.">Жазғы демалыс — қызық та пайдалы! Балаларыңыз жаңа дос табады, дамиды және көңілді уақыт өткізеді.</p>
+        <ul>
+          <li data-kz="Қызықты сабақтар мен шеберлік сыныптары" data-ru="Увлекательные занятия и мастер-классы">Қызықты сабақтар мен шеберлік сыныптары</li>
+          <li data-kz="Дамытушы ойындар мен серуендер" data-ru="Развивающие игры и прогулки">Дамытушы ойындар мен серуендер</li>
+          <li data-kz="Достасу, шығармашылық және қуаныш" data-ru="Дружба, творчество и радость">Достасу, шығармашылық және қуаныш</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary" data-kz="Лагерьге жазылу" data-ru="Записаться в лагерь">Лагерьге жазылу</a>
+      </div>
+      <div class="emoji-big">🏕️🎨🌳</div>
+    </div>
+  </div>
+</section>
+
+<!-- TEACHERS -->
+<section id="teachers">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow reveal" data-kz="Ұстаздарымыз" data-ru="Наши педагоги">Ұстаздарымыз</span>
+      <h2 class="title reveal" data-kz="Сүйіспеншілікпен оқытатын мамандар" data-ru="Специалисты, которые учат с любовью">Сүйіспеншілікпен оқытатын мамандар</h2>
+    </div>
+    <div class="grid feat-grid">
+      <div class="card feat c1 reveal"><div class="ico">🎓</div>
+        <h3 data-kz="Білікті мамандар" data-ru="Опытные специалисты">Білікті мамандар</h3>
+        <p data-kz="Тәжірибелі, өз ісін жетік меңгерген ұстаздар." data-ru="Опытные педагоги, отлично знающие своё дело.">Тәжірибелі, өз ісін жетік меңгерген ұстаздар.</p></div>
+      <div class="card feat c3 reveal"><div class="ico">💡</div>
+        <h3 data-kz="Заманауи әдістер" data-ru="Современные методики">Заманауи әдістер</h3>
+        <p data-kz="Балаға түсінікті, қызықты әрі тиімді оқыту тәсілдері." data-ru="Понятные, интересные и эффективные методы обучения.">Балаға түсінікті, қызықты әрі тиімді оқыту тәсілдері.</p></div>
+      <div class="card feat c5 reveal"><div class="ico">💗</div>
+        <h3 data-kz="Мейірімді ұстаздар" data-ru="Добрые педагоги">Мейірімді ұстаздар</h3>
+        <p data-kz="Әр балаға жылылық пен қамқорлықпен қарайтын мұғалімдер." data-ru="Педагоги, относящиеся к каждому ребёнку с теплом и заботой.">Әр балаға жылылық пен қамқорлықпен қарайтын мұғалімдер.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ADVANTAGES -->
+<section id="advantages" style="background:#f4f7ff">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow reveal" data-kz="Артықшылықтар" data-ru="Преимущества">Артықшылықтар</span>
+      <h2 class="title reveal" data-kz="Неге QEMEL kids?" data-ru="Почему QEMEL kids?">Неге QEMEL kids?</h2>
+    </div>
+    <div class="grid adv-grid">
+      <div class="adv reveal"><div class="ic">👩‍🏫</div><div><h3 data-kz="Тәжірибелі ұстаздар" data-ru="Опытные педагоги">Тәжірибелі ұстаздар</h3><p data-kz="Балалармен жұмысты жетік білетін мамандар." data-ru="Специалисты, умеющие работать с детьми.">Балалармен жұмысты жетік білетін мамандар.</p></div></div>
+      <div class="adv reveal"><div class="ic">👥</div><div><h3 data-kz="Шағын топтар" data-ru="Малые группы">Шағын топтар</h3><p data-kz="Әр балаға жеке көңіл бөлінеді." data-ru="Каждому ребёнку уделяется внимание.">Әр балаға жеке көңіл бөлінеді.</p></div></div>
+      <div class="adv reveal"><div class="ic">🎯</div><div><h3 data-kz="Жеке көзқарас" data-ru="Индивидуальный подход">Жеке көзқарас</h3><p data-kz="Бағдарлама баланың деңгейіне бейімделеді." data-ru="Программа адаптируется под уровень ребёнка.">Бағдарлама баланың деңгейіне бейімделеді.</p></div></div>
+      <div class="adv reveal"><div class="ic">🧩</div><div><h3 data-kz="Жан-жақты даму" data-ru="Всестороннее развитие">Жан-жақты даму</h3><p data-kz="Ақыл, логика және шығармашылық қатар дамиды." data-ru="Ум, логика и творчество развиваются вместе.">Ақыл, логика және шығармашылық қатар дамиды.</p></div></div>
+      <div class="adv reveal"><div class="ic">🛡️</div><div><h3 data-kz="Қауіпсіз орта" data-ru="Безопасная среда">Қауіпсіз орта</h3><p data-kz="Балаға жайлы әрі қауіпсіз жағдай жасалған." data-ru="Созданы уютные и безопасные условия.">Балаға жайлы әрі қауіпсіз жағдай жасалған.</p></div></div>
+      <div class="adv reveal"><div class="ic">😊</div><div><h3 data-kz="Қызық сабақтар" data-ru="Интересные занятия">Қызық сабақтар</h3><p data-kz="Балалар оқуды ойын арқылы жақсы көреді." data-ru="Дети полюбят учёбу через игру.">Балалар оқуды ойын арқылы жақсы көреді.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS (мысал пікірлер — кейін нақтысымен ауыстырыңыз) -->
+<section id="reviews">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow reveal" data-kz="Пікірлер" data-ru="Отзывы">Пікірлер</span>
+      <h2 class="title reveal" data-kz="Ата-аналар не дейді" data-ru="Что говорят родители">Ата-аналар не дейді</h2>
+    </div>
+    <div class="grid rev-grid">
+      <div class="rev reveal"><div class="stars">★★★★★</div>
+        <p data-kz="«Балам мұнда келгелі оқуды жақсы көретін болды. Ұстаздарға көп рахмет!»" data-ru="«С тех пор как ребёнок ходит сюда, он полюбил учёбу. Спасибо педагогам!»">«Балам мұнда келгелі оқуды жақсы көретін болды. Ұстаздарға көп рахмет!»</p>
+        <div class="who"><div class="av">А</div><div><b>Айгерім</b><small data-kz="ана" data-ru="мама">ана</small></div></div></div>
+      <div class="rev reveal"><div class="stars">★★★★★</div>
+        <p data-kz="«Ағылшын тілінен нәтиже бірден көрінді. Заманауи әдіс ұнады.»" data-ru="«Результат по английскому виден сразу. Понравился современный подход.»">«Ағылшын тілінен нәтиже бірден көрінді. Заманауи әдіс ұнады.»</p>
+        <div class="who"><div class="av">Н</div><div><b>Нұрлан</b><small data-kz="әке" data-ru="папа">әке</small></div></div></div>
+      <div class="rev reveal"><div class="stars">★★★★★</div>
+        <p data-kz="«Мейірімді ұстаздар, жайлы орта. Балама лагерь қатты ұнады!»" data-ru="«Добрые педагоги, уютная атмосфера. Ребёнку очень понравился лагерь!»">«Мейірімді ұстаздар, жайлы орта. Балама лагерь қатты ұнады!»</p>
+        <div class="who"><div class="av">Ж</div><div><b>Жанар</b><small data-kz="ана" data-ru="мама">ана</small></div></div></div>
+    </div>
+    <p class="form-note center reveal" style="margin-top:20px" data-kz="* Бұл — үлгі пікірлер. Кейін нақты ата-аналардың пікірлерімен ауыстырамыз." data-ru="* Это примеры отзывов. Позже заменим реальными отзывами родителей.">* Бұл — үлгі пікірлер. Кейін нақты ата-аналардың пікірлерімен ауыстырамыз.</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="background:#f4f7ff">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow reveal" data-kz="Байланыс" data-ru="Контакты">Байланыс</span>
+      <h2 class="title reveal" data-kz="Балаңызды жазуға дайынсыз ба?" data-ru="Готовы записать ребёнка?">Балаңызды жазуға дайынсыз ба?</h2>
+      <p class="lead center reveal" data-kz="Атыңыз бен телефоныңызды қалдырыңыз — біз сізге хабарласамыз." data-ru="Оставьте имя и телефон — мы вам перезвоним.">Атыңыз бен телефоныңызды қалдырыңыз — біз сізге хабарласамыз.</p>
+    </div>
+    <div class="contact-grid">
+      <form class="form-box reveal" id="regform">
+        <label data-kz="Атыңыз" data-ru="Ваше имя">Атыңыз</label>
+        <input type="text" name="name" required data-kz-ph="Мысалы: Айгерім" data-ru-ph="Например: Айгерим" placeholder="Мысалы: Айгерім">
+        <label data-kz="Телефон нөміріңіз" data-ru="Ваш телефон">Телефон нөміріңіз</label>
+        <input type="tel" name="phone" required placeholder="+7 (___) ___-__-__">
+        <button type="submit" class="btn btn-wa">
+          <span>💬</span> <span data-kz="WhatsApp арқылы жазылу" data-ru="Записаться через WhatsApp">WhatsApp арқылы жазылу</span>
+        </button>
+        <p class="form-note" data-kz="Түймені бассаңыз, мәлімет WhatsApp арқылы бізге жіберіледі." data-ru="При нажатии данные отправятся нам через WhatsApp.">Түймені бассаңыз, мәлімет WhatsApp арқылы бізге жіберіледі.</p>
+      </form>
+      <div class="info-list reveal">
+        <div class="info"><div class="ic">📞</div><div><b data-kz="Телефон" data-ru="Телефон">Телефон</b><a id="i-phone" href="#">+7 700 000 00 00</a></div></div>
+        <div class="info"><div class="ic">💬</div><div><b>WhatsApp</b><a id="i-wa" href="#" data-kz="Жазу" data-ru="Написать">Жазу</a></div></div>
+        <div class="info"><div class="ic">📸</div><div><b>Instagram</b><a id="i-ig" href="#" target="_blank">@qemel.kids</a></div></div>
+        <div class="info"><div class="ic">📍</div><div><b data-kz="Мекенжай" data-ru="Адрес">Мекенжай</b><span id="i-addr">Қала, көше, үй №</span></div></div>
+        <div class="info"><div class="ic">🕗</div><div><b data-kz="Жұмыс уақыты" data-ru="Часы работы">Жұмыс уақыты</b><span id="i-hours">Дс–Сб, 09:00–19:00</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="#" class="logo center" style="display:inline-flex"><span class="dot">🎓</span> QEMEL <b>kids</b></a>
+    <div class="fnav">
+      <a href="#about" data-kz="Біз туралы" data-ru="О нас">Біз туралы</a>
+      <a href="#courses" data-kz="Курстар" data-ru="Курсы">Курстар</a>
+      <a href="#camp" data-kz="Жазғы лагерь" data-ru="Летний лагерь">Жазғы лагерь</a>
+      <a href="#contact" data-kz="Байланыс" data-ru="Контакты">Байланыс</a>
+    </div>
+    <p>© 2026 QEMEL kids. <span data-kz="Барлық құқық қорғалған." data-ru="Все права защищены.">Барлық құқық қорғалған.</span></p>
+  </div>
+</footer>
+
+<!-- WhatsApp floating button -->
+<a id="wa-float" href="#" target="_blank" style="position:fixed;right:20px;bottom:20px;z-index:200;
+  width:60px;height:60px;border-radius:50%;background:#25d366;display:grid;place-items:center;
+  font-size:1.8rem;box-shadow:0 10px 26px rgba(37,211,102,.45);text-decoration:none">💬</a>
+
+<script>
+  // ---- Байланыс сілтемелерін CONFIG-тен толтыру ----
+  const waBase = "https://wa.me/" + CONFIG.whatsapp;
+  document.getElementById('i-phone').textContent = CONFIG.phone;
+  document.getElementById('i-phone').href = "tel:" + CONFIG.phone.replace(/[^+\d]/g,'');
+  document.getElementById('i-wa').href = waBase;
+  document.getElementById('wa-float').href = waBase;
+  document.getElementById('i-ig').href = CONFIG.instagram;
+  document.getElementById('i-ig').textContent = "@" + CONFIG.instagram.split('/').filter(Boolean).pop();
+  document.getElementById('i-addr').textContent = CONFIG.address;
+  document.getElementById('i-hours').textContent = CONFIG.hours;
+
+  // ---- Тіл ауыстыру (ҚАЗ / РУС) ----
+  function setLang(lang){
+    document.documentElement.lang = (lang==='kk')?'kk':'ru';
+    document.querySelectorAll('[data-kz]').forEach(el=>{
+      const val = (lang==='kk')? el.dataset.kz : el.dataset.ru;
+      if(val!==undefined) el.innerHTML = val;
+    });
+    document.querySelectorAll('[data-kz-ph]').forEach(el=>{
+      el.placeholder = (lang==='kk')? el.dataset.kzPh : el.dataset.ruPh;
+    });
+    document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('on', b.dataset.lang===lang));
+    localStorage.setItem('qemel_lang', lang);
+  }
+  document.querySelectorAll('.lang button').forEach(b=>{
+    b.addEventListener('click',()=>setLang(b.dataset.lang));
+  });
+  setLang(localStorage.getItem('qemel_lang') || 'kk');
+
+  // ---- Тіркелу формасы → WhatsApp ----
+  document.getElementById('regform').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = this.name.value.trim();
+    const phone = this.phone.value.trim();
+    const isKk = document.documentElement.lang==='kk';
+    const text = isKk
+      ? `Сәлеметсіз бе! Мен QEMEL kids-ке балама сабаққа жазылғым келеді.%0AАтым: ${name}%0AТелефон: ${phone}`
+      : `Здравствуйте! Хочу записать ребёнка на занятия в QEMEL kids.%0AИмя: ${name}%0AТелефон: ${phone}`;
+    window.open(waBase + "?text=" + text, "_blank");
+  });
+
+  // ---- Скролл анимация ----
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }});
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
