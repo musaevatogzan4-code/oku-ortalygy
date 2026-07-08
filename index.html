@@ -143,13 +143,20 @@
   .feat-grid{grid-template-columns:repeat(3,1fr);margin-top:38px}
   .feat{text-align:center;padding:34px 24px}
   .feat .ico{margin-inline:auto}
-  .team-grid{grid-template-columns:1fr 1fr;max-width:720px;margin:38px auto 0}
-  .tcard{background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .2s ease,box-shadow .2s ease}
-  .tcard:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
-  .tcard img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 15%;display:block}
-  .tcard .tinfo{padding:20px 22px;text-align:center}
-  .tcard h3{font-size:1.22rem;margin-bottom:3px}
-  .tcard .subj{color:var(--blue);font-weight:700;font-size:.96rem}
+  .team-grid{grid-template-columns:1fr 1fr;max-width:740px;margin:40px auto 0}
+  .tcard{background:var(--card);border-radius:26px;overflow:hidden;box-shadow:var(--shadow-sm);
+    border:1px solid rgba(45,70,140,.05);transition:transform .25s ease,box-shadow .25s ease}
+  .tcard:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+  .tcard .photo{position:relative;aspect-ratio:4/5;overflow:hidden}
+  .tcard .photo img{width:100%;height:100%;object-fit:cover;object-position:center 12%;display:block;transition:transform .4s ease}
+  .tcard:hover .photo img{transform:scale(1.05)}
+  .tcard .photo::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;z-index:2;
+    background:linear-gradient(90deg,var(--yellow),var(--pink),var(--blue))}
+  .tcard .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(31,42,68,.28),transparent 42%)}
+  .tcard .tinfo{padding:18px 20px 24px;text-align:center}
+  .tcard h3{font-size:1.2rem;margin-bottom:9px}
+  .tcard .subj{display:inline-block;background:rgba(61,123,255,.12);color:var(--blue);
+    padding:6px 15px;border-radius:100px;font-weight:700;font-size:.88rem}
   @media(max-width:620px){.team-grid{grid-template-columns:1fr;max-width:330px}}
   .adv-grid{grid-template-columns:repeat(3,1fr);margin-top:38px}
   .adv{display:flex;gap:15px;align-items:flex-start;background:var(--card);border-radius:var(--radius-sm);
@@ -410,17 +417,17 @@
     </div>
     <div class="grid team-grid">
       <div class="tcard reveal">
-        <img src="teacher1.jpg" alt="Мархан Аружан Мәліққызы">
+        <div class="photo"><img src="teacher1.jpg" alt="Мархан Аружан Мәліққызы"></div>
         <div class="tinfo">
           <h3>Мархан Аружан Мәліққызы</h3>
-          <div class="subj" data-kz="Бастауыш сынып мұғалімі" data-ru="Учитель начальных классов">Бастауыш сынып мұғалімі</div>
+          <span class="subj" data-kz="Бастауыш сынып мұғалімі" data-ru="Учитель начальных классов">Бастауыш сынып мұғалімі</span>
         </div>
       </div>
       <div class="tcard reveal">
-        <img src="teacher2.jpg" alt="QEMEL kids ұстазы">
+        <div class="photo"><img src="teacher2.jpg" alt="QEMEL kids ұстазы"></div>
         <div class="tinfo">
           <h3 data-kz="Ұстазымыз" data-ru="Наш педагог">Ұстазымыз</h3>
-          <div class="subj" data-kz="Мейірімді маман" data-ru="Заботливый педагог">Мейірімді маман</div>
+          <span class="subj" data-kz="Мейірімді маман" data-ru="Заботливый педагог">Мейірімді маман</span>
         </div>
       </div>
     </div>
