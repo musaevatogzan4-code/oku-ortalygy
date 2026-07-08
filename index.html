@@ -170,6 +170,29 @@
   footer .fnav a{color:#fff;opacity:.8;text-decoration:none;font-weight:600;font-size:.95rem}
   footer .fnav a:hover{opacity:1;color:var(--yellow)}
 
+  /* Skills */
+  .skills{max-width:780px;margin:30px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:14px;text-align:left}
+  .skills>div{background:var(--card);border-radius:16px;padding:15px 20px;box-shadow:var(--shadow-sm);
+    font-weight:700;display:flex;gap:13px;align-items:center}
+  .skills .e{font-size:1.5rem;flex-shrink:0}
+
+  /* Plans / prices */
+  .plans-grid{grid-template-columns:1fr 1fr;margin-top:40px}
+  .plan{background:var(--card);border-radius:var(--radius);padding:34px 30px;box-shadow:var(--shadow-sm);
+    border:2px solid transparent;display:flex;flex-direction:column}
+  .plan.feat{border-color:var(--pink);box-shadow:var(--shadow);position:relative}
+  .plan .tag{display:inline-block;align-self:flex-start;font-weight:800;font-size:.82rem;padding:6px 15px;
+    border-radius:100px;background:rgba(61,123,255,.12);color:var(--blue);margin-bottom:14px}
+  .plan.feat .tag{background:rgba(255,107,166,.15);color:var(--pink)}
+  .plan h3{font-size:1.4rem;margin-bottom:8px}
+  .plan .time{color:var(--muted);font-weight:700;margin-bottom:18px;font-size:.98rem}
+  .plan ul{list-style:none;margin-bottom:22px}
+  .plan li{padding:7px 0 7px 30px;position:relative;font-weight:600;font-size:.99rem}
+  .plan li::before{content:"✓";position:absolute;left:0;color:var(--mint);font-weight:800;font-size:1.1rem}
+  .plan .price{margin-top:auto;font-family:'Baloo 2',sans-serif;font-size:2.1rem;font-weight:800;color:var(--ink);line-height:1.1}
+  .plan .price small{display:block;font-family:'Nunito',sans-serif;font-size:.92rem;color:var(--muted);font-weight:600}
+  .plan .btn{margin-top:18px;justify-content:center}
+
   /* Reveal animation */
   .reveal{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
   .reveal.in{opacity:1;transform:none}
@@ -185,12 +208,14 @@
     .camp .emoji-big{order:-1}
     .camp li{display:inline-block;text-align:left}
     .contact-grid{grid-template-columns:1fr}
+    .plans-grid{grid-template-columns:1fr}
   }
   @media(max-width:620px){
     section{padding:56px 0}
     .nav-links{display:none}
     .burger{display:block}
     .courses-grid,.feat-grid,.adv-grid,.rev-grid{grid-template-columns:1fr}
+    .skills{grid-template-columns:1fr}
     .float{display:none}
   }
 </style>
@@ -214,8 +239,8 @@
     <a href="#" class="logo"><span class="dot">🎓</span> QEMEL <b>kids</b></a>
     <nav class="nav-links" id="navlinks">
       <a href="#about" data-kz="Біз туралы" data-ru="О нас">Біз туралы</a>
-      <a href="#courses" data-kz="Курстар" data-ru="Курсы">Курстар</a>
-      <a href="#camp" data-kz="Жазғы лагерь" data-ru="Летний лагерь">Жазғы лагерь</a>
+      <a href="#courses" data-kz="Бағдарлама" data-ru="Программа">Бағдарлама</a>
+      <a href="#camp" data-kz="Топтар мен бағалар" data-ru="Группы и цены">Топтар мен бағалар</a>
       <a href="#reviews" data-kz="Пікірлер" data-ru="Отзывы">Пікірлер</a>
       <a href="#contact" data-kz="Байланыс" data-ru="Контакты">Байланыс</a>
     </nav>
@@ -272,50 +297,57 @@
   </div>
 </section>
 
-<!-- COURSES -->
+<!-- PROGRAM -->
 <section id="courses" style="background:#f4f7ff">
-  <div class="wrap">
-    <div class="center">
-      <span class="eyebrow reveal" data-kz="Бағдарламалар" data-ru="Программы">Бағдарламалар</span>
-      <h2 class="title reveal" data-kz="Біздің курстар" data-ru="Наши курсы">Біздің курстар</h2>
-      <p class="lead reveal center" data-kz="Балаңызға қажет бағытты таңдаңыз" data-ru="Выберите нужное направление для вашего ребёнка">Балаңызға қажет бағытты таңдаңыз</p>
-    </div>
-    <div class="grid courses-grid">
-      <div class="card c1 reveal"><div class="ico">🔤</div>
-        <h3 data-kz="Ағылшын тілі" data-ru="Английский язык">Ағылшын тілі</h3>
-        <p data-kz="Балалар ойын арқылы ағылшынша сөйлеуді, тыңдап түсінуді үйренеді." data-ru="Дети учатся говорить и понимать английский через игру.">Балалар ойын арқылы ағылшынша сөйлеуді, тыңдап түсінуді үйренеді.</p></div>
-      <div class="card c2 reveal"><div class="ico">➗</div>
-        <h3 data-kz="Математика" data-ru="Математика">Математика</h3>
-        <p data-kz="Логика мен есептеу дағдысын дамытамыз. Сандармен дос болу оңай!" data-ru="Развиваем логику и навыки счёта. С числами дружить легко!">Логика мен есептеу дағдысын дамытамыз. Сандармен дос болу оңай!</p></div>
-      <div class="card c3 reveal"><div class="ico">🤖</div>
-        <h3 data-kz="Робототехника" data-ru="Робототехника">Робототехника</h3>
-        <p data-kz="Балалар өз қолымен робот құрастырып, инженерлік ойлауды меңгереді." data-ru="Дети своими руками собирают роботов и осваивают инженерное мышление.">Балалар өз қолымен робот құрастырып, инженерлік ойлауды меңгереді.</p></div>
-      <div class="card c4 reveal"><div class="ico">📚</div>
-        <h3 data-kz="Қосымша білім беру" data-ru="Дополнительное образование">Қосымша білім беру</h3>
-        <p data-kz="Баланың жан-жақты дамуына арналған қосымша дамытушы сабақтар." data-ru="Дополнительные развивающие занятия для всестороннего развития ребёнка.">Баланың жан-жақты дамуына арналған қосымша дамытушы сабақтар.</p></div>
-      <div class="card c5 reveal"><div class="ico">✍️</div>
-        <h3 data-kz="Сауатты жазу" data-ru="Грамотное письмо">Сауатты жазу</h3>
-        <p data-kz="Оқу техникасын дамыту, көркем жазу, диктант пен мәтінмен жұмыс, дамытушы ойындар және логикалық тапсырмалар." data-ru="Развитие техники чтения, каллиграфия, работа с диктантом и текстом, развивающие игры и логические задания.">Оқу техникасын дамыту, көркем жазу, диктант пен мәтінмен жұмыс, дамытушы ойындар және логикалық тапсырмалар.</p></div>
+  <div class="wrap center">
+    <span class="eyebrow reveal" data-kz="Басты бағдарлама" data-ru="Основная программа">Басты бағдарлама</span>
+    <h2 class="title reveal" data-kz="Мектепалды даярлық тобы" data-ru="Группа подготовки к школе">Мектепалды даярлық тобы</h2>
+    <p class="lead center reveal" data-kz="Балаңызды 1-сыныпқа дайындаймыз! Сабақтар шағын топта өтеді, әр балаға жеке көңіл бөлінеді." data-ru="Готовим вашего ребёнка к 1 классу! Занятия проходят в малых группах, каждому ребёнку уделяется внимание.">Балаңызды 1-сыныпқа дайындаймыз! Сабақтар шағын топта өтеді, әр балаға жеке көңіл бөлінеді.</p>
+    <div class="skills">
+      <div class="reveal"><span class="e">📕</span><span data-kz="Әріп танып, оқуды үйренеді" data-ru="Узнаёт буквы и учится читать">Әріп танып, оқуды үйренеді</span></div>
+      <div class="reveal"><span class="e">✍️</span><span data-kz="Қаламды дұрыс ұстап, жазуды" data-ru="Правильно держит ручку и пишет">Қаламды дұрыс ұстап, жазуды</span></div>
+      <div class="reveal"><span class="e">🔢</span><span data-kz="Санауды үйренеді" data-ru="Учится считать">Санауды үйренеді</span></div>
+      <div class="reveal"><span class="e">➕</span><span data-kz="Қосу мен азайтуды" data-ru="Сложение и вычитание">Қосу мен азайтуды</span></div>
+      <div class="reveal"><span class="e">🧩</span><span data-kz="Логикалық тапсырмаларды" data-ru="Логические задания">Логикалық тапсырмаларды</span></div>
+      <div class="reveal"><span class="e">💬</span><span data-kz="Ойлауын, сөйлеуін дамытады" data-ru="Развивает мышление и речь">Ойлауын, сөйлеуін дамытады</span></div>
     </div>
   </div>
 </section>
 
-<!-- CAMP -->
+<!-- GROUPS & PRICES -->
 <section id="camp">
   <div class="wrap">
-    <div class="camp reveal">
-      <div>
-        <span class="eyebrow" data-kz="Жазда" data-ru="Летом">Жазда</span>
-        <h2 data-kz="Жазғы лагерь ☀️" data-ru="Летний лагерь ☀️">Жазғы лагерь ☀️</h2>
-        <p class="lead" data-kz="Жазғы демалыс — қызық та пайдалы! Балаларыңыз жаңа дос табады, дамиды және көңілді уақыт өткізеді." data-ru="Летние каникулы — весело и с пользой! Дети находят новых друзей, развиваются и отлично проводят время.">Жазғы демалыс — қызық та пайдалы! Балаларыңыз жаңа дос табады, дамиды және көңілді уақыт өткізеді.</p>
+    <div class="center">
+      <span class="eyebrow reveal" data-kz="Топтар мен бағалар" data-ru="Группы и цены">Топтар мен бағалар</span>
+      <h2 class="title reveal" data-kz="Өзіңізге ыңғайлы топты таңдаңыз" data-ru="Выберите удобную группу">Өзіңізге ыңғайлы топты таңдаңыз</h2>
+    </div>
+    <div class="grid plans-grid">
+      <div class="plan reveal">
+        <span class="tag" data-kz="Түске дейінгі топ" data-ru="Группа до обеда">Түске дейінгі топ</span>
+        <h3 data-kz="Мектепке дайындық" data-ru="Подготовка к школе">Мектепке дайындық</h3>
+        <div class="time">⏰ 09:00–12:00</div>
         <ul>
-          <li data-kz="Қызықты сабақтар мен шеберлік сыныптары" data-ru="Увлекательные занятия и мастер-классы">Қызықты сабақтар мен шеберлік сыныптары</li>
-          <li data-kz="Дамытушы ойындар мен серуендер" data-ru="Развивающие игры и прогулки">Дамытушы ойындар мен серуендер</li>
-          <li data-kz="Достасу, шығармашылық және қуаныш" data-ru="Дружба, творчество и радость">Достасу, шығармашылық және қуаныш</li>
+          <li data-kz="📕 Әріптен бастап буындап оқу" data-ru="📕 Чтение по слогам с самых букв">📕 Әріптен бастап буындап оқу</li>
+          <li data-kz="🧮 Санап, есеп шығару" data-ru="🧮 Счёт и решение примеров">🧮 Санап, есеп шығару</li>
+          <li data-kz="✍️ Жазып үйрену" data-ru="✍️ Учимся писать">✍️ Жазып үйрену</li>
+          <li data-kz="👥 Шағын топ, әр балаға жеке көңіл" data-ru="👥 Малая группа, внимание каждому">👥 Шағын топ, әр балаға жеке көңіл</li>
         </ul>
-        <a href="#contact" class="btn btn-primary" data-kz="Лагерьге жазылу" data-ru="Записаться в лагерь">Лагерьге жазылу</a>
+        <div class="price">3 000 <small data-kz="теңге" data-ru="тенге">теңге</small></div>
+        <a href="#contact" class="btn btn-primary" data-kz="Жазылу" data-ru="Записаться">Жазылу</a>
       </div>
-      <div class="emoji-big">🏕️🎨🌳</div>
+      <div class="plan feat reveal">
+        <span class="tag" data-kz="Толық күндік топ ☀️" data-ru="Группа полного дня ☀️">Толық күндік топ ☀️</span>
+        <h3 data-kz="Жазғы лагерь + мектепке дайындық" data-ru="Летний лагерь + подготовка к школе">Жазғы лагерь + мектепке дайындық</h3>
+        <div class="time">⏰ 09:00–18:00 · 🍽️ <span data-kz="күніне 3 мезгіл тамақ" data-ru="3-разовое питание">күніне 3 мезгіл тамақ</span></div>
+        <ul>
+          <li data-kz="📚 Математика · 📖 оқу · ✍️ жазу" data-ru="📚 Математика · 📖 чтение · ✍️ письмо">📚 Математика · 📖 оқу · ✍️ жазу</li>
+          <li data-kz="🇬🇧 Ағылшын тілі · 🇷🇺 орыс тілі" data-ru="🇬🇧 Английский · 🇷🇺 русский язык">🇬🇧 Ағылшын тілі · 🇷🇺 орыс тілі</li>
+          <li data-kz="🤖 Робототехника · 💃 хореография" data-ru="🤖 Робототехника · 💃 хореография">🤖 Робототехника · 💃 хореография</li>
+          <li data-kz="🚶 Серуен және дамытушы ойындар" data-ru="🚶 Прогулки и развивающие игры">🚶 Серуен және дамытушы ойындар</li>
+        </ul>
+        <div class="price">50 000 <small data-kz="теңге / айына" data-ru="тенге / в месяц">теңге / айына</small></div>
+        <a href="#contact" class="btn btn-primary" data-kz="Жазылу" data-ru="Записаться">Жазылу</a>
+      </div>
     </div>
   </div>
 </section>
@@ -416,8 +448,8 @@
     <a href="#" class="logo center" style="display:inline-flex"><span class="dot">🎓</span> QEMEL <b>kids</b></a>
     <div class="fnav">
       <a href="#about" data-kz="Біз туралы" data-ru="О нас">Біз туралы</a>
-      <a href="#courses" data-kz="Курстар" data-ru="Курсы">Курстар</a>
-      <a href="#camp" data-kz="Жазғы лагерь" data-ru="Летний лагерь">Жазғы лагерь</a>
+      <a href="#courses" data-kz="Бағдарлама" data-ru="Программа">Бағдарлама</a>
+      <a href="#camp" data-kz="Топтар мен бағалар" data-ru="Группы и цены">Топтар мен бағалар</a>
       <a href="#contact" data-kz="Байланыс" data-ru="Контакты">Байланыс</a>
     </div>
     <p>© 2026 QEMEL kids. <span data-kz="Барлық құқық қорғалған." data-ru="Все права защищены.">Барлық құқық қорғалған.</span></p>
