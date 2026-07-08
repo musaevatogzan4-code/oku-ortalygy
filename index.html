@@ -123,6 +123,15 @@
   .camp ul{list-style:none;margin:18px 0 26px}
   .camp li{padding:6px 0 6px 30px;position:relative;font-weight:600}
   .camp li::before{content:"☀️";position:absolute;left:0}
+  .camp-badge{display:inline-block;background:#fff;color:var(--pink);font-weight:800;padding:9px 20px;
+    border-radius:100px;box-shadow:var(--shadow-sm);margin-bottom:16px;font-size:.95rem}
+  .camp-feats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0 26px}
+  .camp-feats>div{background:rgba(255,255,255,.75);border-radius:18px;padding:15px 18px;display:flex;
+    flex-direction:column;align-items:flex-start;box-shadow:var(--shadow-sm)}
+  .camp-feats .e{font-size:1.7rem;margin-bottom:5px}
+  .camp-feats b{font-size:1.03rem;color:var(--ink)}
+  .camp-feats small{color:var(--muted);font-weight:600}
+  @media(max-width:620px){.camp-feats{grid-template-columns:1fr}}
 
   /* Teachers / advantages */
   .feat-grid{grid-template-columns:repeat(3,1fr);margin-top:38px}
@@ -244,6 +253,7 @@
     <nav class="nav-links" id="navlinks">
       <a href="#about" data-kz="Біз туралы" data-ru="О нас">Біз туралы</a>
       <a href="#courses" data-kz="Бағдарлама" data-ru="Программа">Бағдарлама</a>
+      <a href="#lager" data-kz="Жазғы лагерь" data-ru="Летний лагерь">Жазғы лагерь</a>
       <a href="#camp" data-kz="Топтар мен бағалар" data-ru="Группы и цены">Топтар мен бағалар</a>
       <a href="#reviews" data-kz="Пікірлер" data-ru="Отзывы">Пікірлер</a>
       <a href="#contact" data-kz="Байланыс" data-ru="Контакты">Байланыс</a>
@@ -314,6 +324,27 @@
       <div class="reveal"><span class="e">➕</span><span data-kz="Қосу мен азайтуды" data-ru="Сложение и вычитание">Қосу мен азайтуды</span></div>
       <div class="reveal"><span class="e">🧩</span><span data-kz="Логикалық тапсырмаларды" data-ru="Логические задания">Логикалық тапсырмаларды</span></div>
       <div class="reveal"><span class="e">💬</span><span data-kz="Ойлауын, сөйлеуін дамытады" data-ru="Развивает мышление и речь">Ойлауын, сөйлеуін дамытады</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SUMMER CAMP -->
+<section id="lager">
+  <div class="wrap">
+    <div class="camp reveal">
+      <div>
+        <span class="camp-badge" data-kz="☀️ Жазға жазылу басталды!" data-ru="☀️ Набор на лето открыт!">☀️ Жазға жазылу басталды!</span>
+        <h2 data-kz="Жазғы лагерь" data-ru="Летний лагерь">Жазғы лагерь</h2>
+        <p class="lead" data-kz="Толық күндік топ — балаңыз күні бойы қызықты да пайдалы уақыт өткізеді: оқиды, ойнайды, дамиды, дос табады. Жазы бекер өтпейді!" data-ru="Группа полного дня — ваш ребёнок проведёт весь день интересно и с пользой: учится, играет, развивается, находит друзей. Лето не пройдёт зря!">Толық күндік топ — балаңыз күні бойы қызықты да пайдалы уақыт өткізеді: оқиды, ойнайды, дамиды, дос табады. Жазы бекер өтпейді!</p>
+        <div class="camp-feats">
+          <div><span class="e">🕘</span><b>09:00–18:00</b><small data-kz="Толық күн" data-ru="Полный день">Толық күн</small></div>
+          <div><span class="e">🍽️</span><b data-kz="3 мезгіл" data-ru="3 раза">3 мезгіл</b><small data-kz="тамақ беріледі" data-ru="питание">тамақ беріледі</small></div>
+          <div><span class="e">🤖</span><b data-kz="Робототехника" data-ru="Робототехника">Робототехника</b><small data-kz="+ хореография" data-ru="+ хореография">+ хореография</small></div>
+          <div><span class="e">🎒</span><b data-kz="Мектепке" data-ru="К школе">Мектепке</b><small data-kz="дайындық" data-ru="подготовка">дайындық</small></div>
+        </div>
+        <a href="#contact" class="btn btn-primary" data-kz="Лагерьге жазылу" data-ru="Записаться в лагерь">Лагерьге жазылу</a>
+      </div>
+      <div class="emoji-big">🏕️☀️🎨</div>
     </div>
   </div>
 </section>
@@ -453,6 +484,7 @@
     <div class="fnav">
       <a href="#about" data-kz="Біз туралы" data-ru="О нас">Біз туралы</a>
       <a href="#courses" data-kz="Бағдарлама" data-ru="Программа">Бағдарлама</a>
+      <a href="#lager" data-kz="Жазғы лагерь" data-ru="Летний лагерь">Жазғы лагерь</a>
       <a href="#camp" data-kz="Топтар мен бағалар" data-ru="Группы и цены">Топтар мен бағалар</a>
       <a href="#contact" data-kz="Байланыс" data-ru="Контакты">Байланыс</a>
     </div>
