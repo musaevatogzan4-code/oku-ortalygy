@@ -29,7 +29,9 @@
   html{scroll-behavior:smooth}
   body{
     font-family:'Nunito',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
-    color:var(--ink);background:var(--bg);line-height:1.6;
+    color:var(--ink);line-height:1.6;
+    background:linear-gradient(180deg,#eaf3ff 0%,#f3edff 26%,#fdeaf3 52%,#fff4e6 76%,#e9faf3 100%);
+    background-attachment:fixed;
     overflow-x:hidden;
   }
   h1,h2,h3,.logo,.brand{font-family:'Baloo 2','Nunito',sans-serif;line-height:1.15}
@@ -231,6 +233,36 @@
   .reveal{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
   .reveal.in{opacity:1;transform:none}
 
+  /* Transport banner */
+  .transport{background:linear-gradient(135deg,#d9f0ff,#e9e6ff);border-radius:38px;padding:48px 44px;
+    display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center;overflow:hidden}
+  .transport .tr-emoji{font-size:clamp(4rem,11vw,7rem);line-height:1;filter:drop-shadow(0 10px 14px rgba(0,0,0,.15))}
+  .tr-badge{display:inline-block;background:#fff;color:var(--blue);font-weight:800;padding:7px 17px;
+    border-radius:100px;box-shadow:var(--shadow-sm);margin-bottom:14px;font-size:.9rem}
+  .transport h2{font-size:clamp(1.5rem,3.6vw,2.2rem);margin-bottom:12px}
+  .transport p{color:var(--muted);font-weight:600;margin-bottom:22px;font-size:1.06rem}
+  @media(max-width:700px){.transport{grid-template-columns:1fr;text-align:center;padding:38px 24px}}
+
+  /* FAQ */
+  .faq{max-width:780px;margin:38px auto 0}
+  .faq details{background:var(--card);border-radius:18px;box-shadow:var(--shadow-sm);margin-bottom:14px;
+    border:1px solid rgba(45,70,140,.05);overflow:hidden}
+  .faq summary{padding:19px 24px;font-weight:800;cursor:pointer;list-style:none;display:flex;
+    justify-content:space-between;align-items:center;gap:14px;font-size:1.03rem}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";font-size:1.6rem;color:var(--blue);transition:transform .2s;flex-shrink:0;line-height:1}
+  .faq details[open] summary::after{transform:rotate(45deg)}
+  .faq .fa{padding:0 24px 20px;color:var(--muted);font-weight:600}
+
+  /* Accessibility (нашар көретіндерге) */
+  .a11y-btn{border:none;background:#eef2fb;cursor:pointer;font-size:1.15rem;width:38px;height:38px;
+    border-radius:50%;display:grid;place-items:center;flex-shrink:0}
+  .a11y-btn:hover{background:#e2e8f7}
+  html.a11y{font-size:19px;--ink:#000;--muted:#262626}
+  html.a11y body{background:#fff}
+  html.a11y .hero{background:#fff}
+  html.a11y a:not(.btn):not(.logo){text-decoration:underline}
+
   /* Mobile */
   @media(max-width:900px){
     .hero-grid{grid-template-columns:1fr;text-align:center}
@@ -280,6 +312,7 @@
       <a href="#contact" data-kz="Байланыс" data-ru="Контакты">Байланыс</a>
     </nav>
     <div class="nav-right">
+      <button id="a11y-btn" class="a11y-btn" title="Нашар көретіндерге арналған нұсқа" aria-label="Нашар көретіндерге арналған нұсқа">👁</button>
       <div class="lang">
         <button data-lang="kk" class="on">ҚАЗ</button>
         <button data-lang="ru">РУС</button>
@@ -333,7 +366,7 @@
 </section>
 
 <!-- PROGRAM -->
-<section id="courses" style="background:#f4f7ff">
+<section id="courses">
   <div class="wrap center">
     <span class="eyebrow reveal" data-kz="Басты бағдарлама" data-ru="Основная программа">Басты бағдарлама</span>
     <h2 class="title reveal" data-kz="Мектепалды даярлық тобы" data-ru="Группа подготовки к школе">Мектепалды даярлық тобы</h2>
@@ -408,6 +441,21 @@
   </div>
 </section>
 
+<!-- TRANSPORT -->
+<section id="transport">
+  <div class="wrap">
+    <div class="transport reveal">
+      <div class="tr-emoji">🚐</div>
+      <div>
+        <span class="tr-badge" data-kz="Біздің ерекшелігіміз" data-ru="Наша особенность">Біздің ерекшелігіміз</span>
+        <h2 data-kz="Балаңызды мектептен өзіміз әкелеміз!" data-ru="Забираем ребёнка из школы сами!">Балаңызды мектептен өзіміз әкелеміз!</h2>
+        <p data-kz="Жұмыстан шыға алмайсыз ба? Уайымдамаңыз! Біз балаңызды мектептен үйірмеге тасымалдаймыз — қауіпсіз әрі ыңғайлы. Жұмыс істейтін ата-аналар үшін нағыз шешім." data-ru="Не можете отлучиться с работы? Не переживайте! Мы сами привозим ребёнка из школы на занятия — безопасно и удобно. Настоящее решение для работающих родителей.">Жұмыстан шыға алмайсыз ба? Уайымдамаңыз! Біз балаңызды мектептен үйірмеге тасымалдаймыз — қауіпсіз әрі ыңғайлы. Жұмыс істейтін ата-аналар үшін нағыз шешім.</p>
+        <a href="#contact" class="btn btn-primary" data-kz="Толығырақ білу" data-ru="Узнать подробнее">Толығырақ білу</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- TEACHERS -->
 <section id="teachers">
   <div class="wrap">
@@ -435,7 +483,7 @@
 </section>
 
 <!-- ADVANTAGES -->
-<section id="advantages" style="background:#f4f7ff">
+<section id="advantages">
   <div class="wrap">
     <div class="center">
       <span class="eyebrow reveal" data-kz="Артықшылықтар" data-ru="Преимущества">Артықшылықтар</span>
@@ -473,8 +521,26 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow reveal" data-kz="Сұрақ-жауап" data-ru="Вопрос-ответ">Сұрақ-жауап</span>
+      <h2 class="title reveal" data-kz="Жиі қойылатын сұрақтар" data-ru="Частые вопросы">Жиі қойылатын сұрақтар</h2>
+    </div>
+    <div class="faq reveal">
+      <details><summary data-kz="Балаларды қай жастан қабылдайсыздар?" data-ru="С какого возраста принимаете детей?">Балаларды қай жастан қабылдайсыздар?</summary><div class="fa" data-kz="Дайындық тобына 5 жастан бастап, сондай-ақ 1–4 сынып оқушыларын қабылдаймыз." data-ru="В группу подготовки принимаем с 5 лет, а также учеников 1–4 классов.">Дайындық тобына 5 жастан бастап, сондай-ақ 1–4 сынып оқушыларын қабылдаймыз.</div></details>
+      <details><summary data-kz="Балаңызды мектептен әкелу қызметі бар ма?" data-ru="Есть ли доставка ребёнка из школы?">Балаңызды мектептен әкелу қызметі бар ма?</summary><div class="fa" data-kz="Иә! Біз балаңызды мектептен үйірмеге өзіміз тасымалдаймыз. Жұмыс істейтін ата-аналар үшін өте ыңғайлы." data-ru="Да! Мы сами привозим ребёнка из школы на занятия. Очень удобно для работающих родителей.">Иә! Біз балаңызды мектептен үйірмеге өзіміз тасымалдаймыз. Жұмыс істейтін ата-аналар үшін өте ыңғайлы.</div></details>
+      <details><summary data-kz="Топта неше бала болады?" data-ru="Сколько детей в группе?">Топта неше бала болады?</summary><div class="fa" data-kz="Топтар шағын — әр балаға жеке көңіл бөлінеді." data-ru="Группы маленькие — каждому ребёнку уделяется внимание.">Топтар шағын — әр балаға жеке көңіл бөлінеді.</div></details>
+      <details><summary data-kz="Тамақ беріле ме?" data-ru="Есть ли питание?">Тамақ беріле ме?</summary><div class="fa" data-kz="Толық күндік топта күніне 3 мезгіл тамақ беріледі." data-ru="В группе полного дня — 3-разовое питание в день.">Толық күндік топта күніне 3 мезгіл тамақ беріледі.</div></details>
+      <details><summary data-kz="Сабақ бағасы қанша?" data-ru="Сколько стоит обучение?">Сабақ бағасы қанша?</summary><div class="fa" data-kz="Түске дейінгі топ — айына 30 000 теңге, толық күндік топ — айына 50 000 теңге. Толығырақ ақпарат үшін хабарласыңыз." data-ru="Группа до обеда — 30 000 тг/мес, полного дня — 50 000 тг/мес. Подробнее — свяжитесь с нами.">Түске дейінгі топ — айына 30 000 теңге, толық күндік топ — айына 50 000 теңге. Толығырақ ақпарат үшін хабарласыңыз.</div></details>
+      <details><summary data-kz="Қалай жазыламын?" data-ru="Как записаться?">Қалай жазыламын?</summary><div class="fa" data-kz="WhatsApp арқылы немесе төмендегі форманы толтырып жазыла аласыз. Біз сізге хабарласамыз." data-ru="Можно записаться через WhatsApp или заполнив форму ниже. Мы с вами свяжемся.">WhatsApp арқылы немесе төмендегі форманы толтырып жазыла аласыз. Біз сізге хабарласамыз.</div></details>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
-<section id="contact" style="background:#f4f7ff">
+<section id="contact">
   <div class="wrap">
     <div class="center">
       <span class="eyebrow reveal" data-kz="Байланыс" data-ru="Контакты">Байланыс</span>
@@ -494,7 +560,7 @@
       </form>
       <div class="info-list reveal">
         <div class="info"><div class="ic">📞</div><div><b data-kz="Телефон" data-ru="Телефон">Телефон</b><a id="i-phone" href="#">+7 700 000 00 00</a></div></div>
-        <div class="info"><div class="ic">💬</div><div><b>WhatsApp</b><a id="i-wa" href="#" data-kz="Жазу" data-ru="Написать">Жазу</a></div></div>
+        <div class="info"><div class="ic">💬</div><div><b>WhatsApp</b><a id="i-wa" href="#">8 747 900 50 93</a></div></div>
         <div class="info"><div class="ic">📸</div><div><b>Instagram</b><a id="i-ig" href="#" target="_blank">@qemel.kids</a></div></div>
         <div class="info"><div class="ic">📍</div><div><b data-kz="Мекенжай" data-ru="Адрес">Мекенжай</b><span id="i-addr">Қала, көше, үй №</span></div></div>
         <div class="info"><div class="ic">🕗</div><div><b data-kz="Жұмыс уақыты" data-ru="Часы работы">Жұмыс уақыты</b><span id="i-hours">Дс–Сб, 09:00–19:00</span></div></div>
@@ -551,6 +617,12 @@
     b.addEventListener('click',()=>setLang(b.dataset.lang));
   });
   setLang(localStorage.getItem('qemel_lang') || 'kk');
+
+  // ---- Нашар көретіндерге арналған нұсқа ----
+  const a11yBtn = document.getElementById('a11y-btn');
+  function setA11y(on){ document.documentElement.classList.toggle('a11y', on); localStorage.setItem('qemel_a11y', on ? '1' : '0'); }
+  a11yBtn.addEventListener('click', ()=> setA11y(!document.documentElement.classList.contains('a11y')));
+  setA11y(localStorage.getItem('qemel_a11y') === '1');
 
   // ---- Тіркелу формасы → WhatsApp ----
   document.getElementById('regform').addEventListener('submit', function(e){
