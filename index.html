@@ -143,6 +143,14 @@
   .feat-grid{grid-template-columns:repeat(3,1fr);margin-top:38px}
   .feat{text-align:center;padding:34px 24px}
   .feat .ico{margin-inline:auto}
+  .team-grid{grid-template-columns:1fr 1fr;max-width:720px;margin:38px auto 0}
+  .tcard{background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .2s ease,box-shadow .2s ease}
+  .tcard:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .tcard img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 15%;display:block}
+  .tcard .tinfo{padding:20px 22px;text-align:center}
+  .tcard h3{font-size:1.22rem;margin-bottom:3px}
+  .tcard .subj{color:var(--blue);font-weight:700;font-size:.96rem}
+  @media(max-width:620px){.team-grid{grid-template-columns:1fr;max-width:330px}}
   .adv-grid{grid-template-columns:repeat(3,1fr);margin-top:38px}
   .adv{display:flex;gap:15px;align-items:flex-start;background:var(--card);border-radius:var(--radius-sm);
     padding:22px;box-shadow:var(--shadow-sm)}
@@ -400,16 +408,21 @@
       <span class="eyebrow reveal" data-kz="Ұстаздарымыз" data-ru="Наши педагоги">Ұстаздарымыз</span>
       <h2 class="title reveal" data-kz="Сүйіспеншілікпен оқытатын мамандар" data-ru="Специалисты, которые учат с любовью">Сүйіспеншілікпен оқытатын мамандар</h2>
     </div>
-    <div class="grid feat-grid">
-      <div class="card feat c1 reveal"><div class="ico">🎓</div>
-        <h3 data-kz="Білікті мамандар" data-ru="Опытные специалисты">Білікті мамандар</h3>
-        <p data-kz="Тәжірибелі, өз ісін жетік меңгерген ұстаздар." data-ru="Опытные педагоги, отлично знающие своё дело.">Тәжірибелі, өз ісін жетік меңгерген ұстаздар.</p></div>
-      <div class="card feat c3 reveal"><div class="ico">💡</div>
-        <h3 data-kz="Заманауи әдістер" data-ru="Современные методики">Заманауи әдістер</h3>
-        <p data-kz="Балаға түсінікті, қызықты әрі тиімді оқыту тәсілдері." data-ru="Понятные, интересные и эффективные методы обучения.">Балаға түсінікті, қызықты әрі тиімді оқыту тәсілдері.</p></div>
-      <div class="card feat c5 reveal"><div class="ico">💗</div>
-        <h3 data-kz="Мейірімді ұстаздар" data-ru="Добрые педагоги">Мейірімді ұстаздар</h3>
-        <p data-kz="Әр балаға жылылық пен қамқорлықпен қарайтын мұғалімдер." data-ru="Педагоги, относящиеся к каждому ребёнку с теплом и заботой.">Әр балаға жылылық пен қамқорлықпен қарайтын мұғалімдер.</p></div>
+    <div class="grid team-grid">
+      <div class="tcard reveal">
+        <img src="teacher1.jpg" alt="Мархан Аружан Мәліққызы">
+        <div class="tinfo">
+          <h3>Мархан Аружан Мәліққызы</h3>
+          <div class="subj" data-kz="Бастауыш сынып мұғалімі" data-ru="Учитель начальных классов">Бастауыш сынып мұғалімі</div>
+        </div>
+      </div>
+      <div class="tcard reveal">
+        <img src="teacher2.jpg" alt="QEMEL kids ұстазы">
+        <div class="tinfo">
+          <h3 data-kz="Ұстазымыз" data-ru="Наш педагог">Ұстазымыз</h3>
+          <div class="subj" data-kz="Мейірімді маман" data-ru="Заботливый педагог">Мейірімді маман</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
