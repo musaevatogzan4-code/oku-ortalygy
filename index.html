@@ -299,7 +299,8 @@
     instagram: "https://instagram.com/qemel.kids.shym",  // Instagram сілтемесі
     phone: "+7 747 900 50 93", // Көрсетілетін телефон нөмірі
     address: "Шымкент қаласы, Колхозная 7",   // Мекенжай
-    hours: "09:00–18:00"    // Жұмыс уақыты
+    hours: "09:00–18:00",    // Жұмыс уақыты
+    twogis: "https://2gis.kz/shymkent/search/Колхозная 7"  // 2GIS сілтемесі (нақты болса, орталықтың 2GIS бетінің сілтемесін қойыңыз)
   };
 </script>
 
@@ -581,6 +582,7 @@
         <div class="info"><div class="ic">💬</div><div><b>WhatsApp</b><a id="i-wa" href="#">8 747 900 50 93</a></div></div>
         <div class="info"><div class="ic">📸</div><div><b>Instagram</b><a id="i-ig" href="#" target="_blank">@qemel.kids</a></div></div>
         <div class="info"><div class="ic">📍</div><div><b data-kz="Мекенжай" data-ru="Адрес">Мекенжай</b><span id="i-addr">Қала, көше, үй №</span></div></div>
+        <div class="info"><div class="ic">🗺️</div><div><b>2GIS</b><a id="i-2gis" href="#" target="_blank" data-kz="Картадан қарау" data-ru="Открыть на карте">Картадан қарау</a></div></div>
         <div class="info"><div class="ic">🕗</div><div><b data-kz="Жұмыс уақыты" data-ru="Часы работы">Жұмыс уақыты</b><span id="i-hours">Дс–Сб, 09:00–19:00</span></div></div>
       </div>
     </div>
@@ -616,6 +618,7 @@
   document.getElementById('i-ig').href = CONFIG.instagram;
   document.getElementById('i-ig').textContent = "@" + CONFIG.instagram.split('/').filter(Boolean).pop();
   document.getElementById('i-addr').textContent = CONFIG.address;
+  document.getElementById('i-2gis').href = CONFIG.twogis;
   document.getElementById('i-hours').textContent = CONFIG.hours;
 
   // ---- Тіл ауыстыру (ҚАЗ / РУС) ----
