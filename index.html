@@ -252,6 +252,29 @@
   .plan .price small{display:block;font-family:'Nunito',sans-serif;font-size:.92rem;color:var(--muted);font-weight:600}
   .plan .btn{margin-top:18px;justify-content:center}
 
+  /* Мотивация жолағы (төбе) */
+  .topbar{background:linear-gradient(90deg,var(--blue),var(--purple),var(--pink));color:#fff;
+    text-align:center;padding:11px 16px;font-weight:800;font-size:1rem;line-height:1.4}
+
+  /* Басты ұран — салют */
+  .slogan{position:relative;overflow:hidden;text-align:center;
+    background:linear-gradient(135deg,#1e2a5e 0%,#3b2a6d 55%,#5d2a72 100%)}
+  .slogan .wrap{position:relative;z-index:3}
+  .slogan .eyebrow{background:rgba(255,255,255,.16);color:#fff}
+  .slogan-text{font-family:'Baloo 2','Nunito',sans-serif;font-weight:800;color:#fff;
+    font-size:clamp(1.7rem,4.8vw,3.1rem);line-height:1.25;text-shadow:0 6px 24px rgba(0,0,0,.35);margin-top:6px}
+  .slogan-text .hl{background:linear-gradient(90deg,#ffd93c,#ff6ba6,#38d6c3);
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .slogan-sub{color:rgba(255,255,255,.92);font-weight:600;max-width:660px;margin:18px auto 0;font-size:1.06rem}
+  .slogan .spark{position:absolute;font-size:1.9rem;z-index:1;animation:pop 2.6s ease-in-out infinite}
+  .slogan .spark.s1{top:13%;left:7%}
+  .slogan .spark.s2{top:18%;right:9%;animation-delay:.5s;font-size:2.3rem}
+  .slogan .spark.s3{bottom:15%;left:12%;animation-delay:1s;font-size:2.2rem}
+  .slogan .spark.s4{bottom:20%;right:11%;animation-delay:1.5s}
+  .slogan .spark.s5{top:46%;left:3%;animation-delay:.8s}
+  .slogan .spark.s6{top:52%;right:4%;animation-delay:1.3s;font-size:2.1rem}
+  @keyframes pop{0%,100%{transform:scale(.55) rotate(-8deg);opacity:.35}50%{transform:scale(1.25) rotate(8deg);opacity:1}}
+
   /* Reveal animation */
   .reveal{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
   .reveal.in{opacity:1;transform:none}
@@ -324,6 +347,8 @@
   };
 </script>
 
+<div class="topbar" data-kz="✨ Әр бала — жұлдыз! Білімге салынған әр қадам — жарқын болашаққа бастайды ✨" data-ru="✨ Каждый ребёнок — звезда! Каждый шаг к знаниям ведёт в светлое будущее ✨">✨ Әр бала — жұлдыз! Білімге салынған әр қадам — жарқын болашаққа бастайды ✨</div>
+
 <header>
   <div class="wrap nav">
     <a href="#" class="logo"><img src="logo.png" alt="QEMEL kids" class="logo-img" onerror="this.classList.add('noimg')"><span class="brand-fallback"><span class="dot">🎓</span> QEMEL <b>kids</b></span></a>
@@ -374,6 +399,16 @@
       <div class="float f2"><span class="ic">🤖</span> <span data-kz="Робототехника" data-ru="Робототехника">Робототехника</span></div>
       <div class="float f3"><span class="ic">🔤</span> <span data-kz="Ағылшын" data-ru="Английский">Ағылшын</span></div>
     </div>
+  </div>
+</section>
+
+<!-- SLOGAN -->
+<section id="slogan" class="slogan">
+  <span class="spark s1">🎉</span><span class="spark s2">🎆</span><span class="spark s3">✨</span><span class="spark s4">🎇</span><span class="spark s5">⭐</span><span class="spark s6">🎉</span>
+  <div class="wrap">
+    <span class="eyebrow reveal" data-kz="Біздің басты ұранымыз" data-ru="Наш главный девиз">Біздің басты ұранымыз</span>
+    <h2 class="slogan-text reveal" data-kz="Бала кезден білімді нығайтайық. <span class='hl'>Білімді трендке айналдырайық!</span>" data-ru="Укрепляем знания с детства. <span class='hl'>Сделаем знания трендом!</span>">Бала кезден білімді нығайтайық. <span class="hl">Білімді трендке айналдырайық!</span></h2>
+    <p class="slogan-sub reveal" data-kz="Балаға: сен ерекшесің, қолыңнан бәрі келеді! Ата-анаға: балаңыздың әр қадамы — біздің мақтанышымыз." data-ru="Ребёнку: ты особенный, у тебя всё получится! Родителю: каждый шаг вашего ребёнка — наша гордость.">Балаға: сен ерекшесің, қолыңнан бәрі келеді! Ата-анаға: балаңыздың әр қадамы — біздің мақтанышымыз.</p>
   </div>
 </section>
 
