@@ -146,6 +146,11 @@
   .camp-feats b{font-size:1.03rem;color:var(--ink)}
   .camp-feats small{color:var(--muted);font-weight:600}
   @media(max-width:620px){.camp-feats{grid-template-columns:1fr}}
+  .camp-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+  .camp-photos a{display:block;border-radius:18px;overflow:hidden;box-shadow:var(--shadow-sm)}
+  .camp-photos img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .3s ease}
+  .camp-photos a:hover img{transform:scale(1.05)}
+  @media(max-width:620px){.camp-photos{grid-template-columns:1fr 1fr}}
 
   /* Teachers / advantages */
   .feat-grid{grid-template-columns:repeat(3,1fr);margin-top:38px}
@@ -418,6 +423,11 @@
         <a href="#contact" class="btn btn-primary" data-kz="Лагерьге жазылу" data-ru="Записаться в лагерь">Лагерьге жазылу</a>
       </div>
       <div class="emoji-big">🏕️☀️🎨</div>
+    </div>
+    <div class="camp-photos reveal">
+      <a href="camp1.jpg" target="_blank"><img src="camp1.jpg" alt="Жазғы лагерь — жүлделер" loading="lazy"></a>
+      <a href="camp2.jpg" target="_blank"><img src="camp2.jpg" alt="Жазғы лагерь — балалар" loading="lazy"></a>
+      <a href="camp3.jpg" target="_blank"><img src="camp3.jpg" alt="Жазғы лагерь — серуен" loading="lazy"></a>
     </div>
   </div>
 </section>
