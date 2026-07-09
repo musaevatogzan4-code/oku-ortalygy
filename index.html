@@ -175,6 +175,10 @@
   .rev-grid{grid-template-columns:repeat(3,1fr);margin-top:38px}
   .rev{background:var(--card);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow-sm);position:relative}
   .rev .stars{color:var(--yellow);font-size:1.05rem;margin-bottom:12px}
+  .rev-shot{display:block;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-sm);
+    border:1px solid rgba(45,70,140,.06);transition:transform .2s ease,box-shadow .2s ease;align-self:start}
+  .rev-shot:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+  .rev-shot img{width:100%;height:auto;display:block}
   .rev p{font-size:1rem;margin-bottom:16px}
   .rev .who{display:flex;align-items:center;gap:12px}
   .rev .av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-size:1.3rem;
@@ -569,15 +573,9 @@
       </div>
     </div>
     <div class="grid rev-grid">
-      <div class="rev reveal"><div class="stars">★★★★★</div>
-        <p data-kz="«Сізге және бүкіл ұжымға алғысым шексіз! Жұмыс істейтін аналардың өмірін жеңілдеткендеріңіз үшін рахмет. Еңбектеріңіз жансын!» ❤️" data-ru="«Хочу поблагодарить Вас и всю команду! Спасибо, что облегчаете жизнь нам, работающим мамам. Спасибо за ваш труд!» ❤️">«Сізге және бүкіл ұжымға алғысым шексіз! Жұмыс істейтін аналардың өмірін жеңілдеткендеріңіз үшін рахмет. Еңбектеріңіз жансын!» ❤️</p>
-        <div class="who"><div class="av">И</div><div><b data-kz="Ислам анасы" data-ru="Мама Ислама">Ислам анасы</b><small data-kz="ата-ана" data-ru="родитель">ата-ана</small></div></div></div>
-      <div class="rev reveal"><div class="stars">★★★★★</div>
-        <p data-kz="«Еңбегіңіздің жемісін көріңіз, Алла разы болсын! Сіздей ұстаздан үздік оқушылар шықсын деймін.» 🌷" data-ru="«Пусть ваш труд вознаградится, дай Бог! Желаю, чтобы у такого педагога были лучшие ученики.» 🌷">«Еңбегіңіздің жемісін көріңіз, Алла разы болсын! Сіздей ұстаздан үздік оқушылар шықсын деймін.» 🌷</p>
-        <div class="who"><div class="av">А</div><div><b data-kz="Абдулла анасы" data-ru="Мама Абдуллы">Абдулла анасы</b><small data-kz="ата-ана" data-ru="родитель">ата-ана</small></div></div></div>
-      <div class="rev reveal"><div class="stars">★★★★★</div>
-        <p data-kz="«Ең бастысы — баламмен жақсы қарым-қатынас орнады. 3-ші күні үйде ‹Ата› деген сөзді оқып берді, қуанып қалдым!» 🥰" data-ru="«Главное — наладился хороший контакт с ребёнком. На 3-й день дома прочитал слово ‹Ата›, я так обрадовалась!» 🥰">«Ең бастысы — баламмен жақсы қарым-қатынас орнады. 3-ші күні үйде ‹Ата› деген сөзді оқып берді, қуанып қалдым!» 🥰</p>
-        <div class="who"><div class="av">Э</div><div><b data-kz="Эльмира анасы" data-ru="Мама Эльмиры">Эльмира анасы</b><small data-kz="ата-ана" data-ru="родитель">ата-ана</small></div></div></div>
+      <a class="rev-shot reveal" href="review1.jpg" target="_blank"><img src="review1.jpg" alt="Ата-ана пікірі — Ислам анасы" loading="lazy"></a>
+      <a class="rev-shot reveal" href="review2.jpg" target="_blank"><img src="review2.jpg" alt="Ата-ана пікірі — Абдулла анасы" loading="lazy"></a>
+      <a class="rev-shot reveal" href="review3.jpg" target="_blank"><img src="review3.jpg" alt="Ата-ана пікірі — Эльмира анасы" loading="lazy"></a>
     </div>
   </div>
 </section>
