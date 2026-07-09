@@ -275,6 +275,24 @@
   .slogan .spark.s6{top:52%;right:4%;animation-delay:1.3s;font-size:2.1rem}
   @keyframes pop{0%,100%{transform:scale(.55) rotate(-8deg);opacity:.35}50%{transform:scale(1.25) rotate(8deg);opacity:1}}
 
+  /* Мотивация бөлімі */
+  .motiv-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:900px;margin:40px auto 0}
+  .motiv{border-radius:26px;padding:34px 30px;box-shadow:var(--shadow-sm);text-align:left}
+  .motiv.child{background:linear-gradient(135deg,#fff4d6,#ffe6f0)}
+  .motiv.parent{background:linear-gradient(135deg,#dff0ff,#e6e6ff)}
+  .motiv .mi{font-size:2.4rem;margin-bottom:12px}
+  .motiv h3{font-size:1.3rem;margin-bottom:10px}
+  .motiv p{color:var(--ink);font-weight:600;font-size:1.05rem;opacity:.9}
+  @media(max-width:700px){.motiv-grid{grid-template-columns:1fr}}
+
+  /* Лагерь коллаж */
+  .camp-collage{position:relative;aspect-ratio:1/1;max-width:360px;margin:0 auto;width:100%}
+  .camp-collage img{position:absolute;width:62%;border:5px solid #fff;border-radius:14px;
+    box-shadow:0 12px 26px rgba(45,70,140,.22);object-fit:cover;aspect-ratio:4/3}
+  .camp-collage .c-a{top:2%;left:0;transform:rotate(-6deg);z-index:1}
+  .camp-collage .c-b{top:20%;right:0;transform:rotate(6deg);z-index:3}
+  .camp-collage .c-c{bottom:2%;left:16%;transform:rotate(-3deg);z-index:2}
+
   /* Reveal animation */
   .reveal{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
   .reveal.in{opacity:1;transform:none}
@@ -408,7 +426,6 @@
   <div class="wrap">
     <span class="eyebrow reveal" data-kz="Біздің басты ұранымыз" data-ru="Наш главный девиз">Біздің басты ұранымыз</span>
     <h2 class="slogan-text reveal" data-kz="Бала кезден білімді нығайтайық. <span class='hl'>Білімді трендке айналдырайық!</span>" data-ru="Укрепляем знания с детства. <span class='hl'>Сделаем знания трендом!</span>">Бала кезден білімді нығайтайық. <span class="hl">Білімді трендке айналдырайық!</span></h2>
-    <p class="slogan-sub reveal" data-kz="Балаға: сен ерекшесің, қолыңнан бәрі келеді! Ата-анаға: балаңыздың әр қадамы — біздің мақтанышымыз." data-ru="Ребёнку: ты особенный, у тебя всё получится! Родителю: каждый шаг вашего ребёнка — наша гордость.">Балаға: сен ерекшесің, қолыңнан бәрі келеді! Ата-анаға: балаңыздың әр қадамы — біздің мақтанышымыз.</p>
   </div>
 </section>
 
@@ -421,6 +438,28 @@
        data-kz="Біз әр баланың бойындағы қабілетті ашуға көмектесеміз. Балалар бізде білім алып қана қоймайды — олар ойлауды, шығармашылықты және өзіне сенімді болуды үйренеді. Әр сабақ қызық ойын мен нақты нәтижеге негізделген."
        data-ru="Мы помогаем раскрыть способности каждого ребёнка. Дети у нас не только получают знания — они учатся мыслить, творить и быть уверенными в себе. Каждое занятие построено на игре и реальном результате.">
        Біз әр баланың бойындағы қабілетті ашуға көмектесеміз. Балалар бізде білім алып қана қоймайды — олар ойлауды, шығармашылықты және өзіне сенімді болуды үйренеді. Әр сабақ қызық ойын мен нақты нәтижеге негізделген.</p>
+  </div>
+</section>
+
+<!-- MOTIVATION -->
+<section id="motivation">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow reveal" data-kz="Мотивация" data-ru="Мотивация">Мотивация</span>
+      <h2 class="title reveal" data-kz="Жүрекке жылы сөз" data-ru="Тёплые слова">Жүрекке жылы сөз</h2>
+    </div>
+    <div class="motiv-grid">
+      <div class="motiv child reveal">
+        <div class="mi">🌟</div>
+        <h3 data-kz="Балаға" data-ru="Ребёнку">Балаға</h3>
+        <p data-kz="Сен ерекшесің! Әр күні бір жаңа нәрсе үйрен, қателерден қорықпа — себебі әр қате сені ақылды әрі мықты етеді. Арманда, ізден, сен. Сенің қолыңнан бәрі келеді!" data-ru="Ты особенный! Каждый день узнавай что-то новое и не бойся ошибок — ведь каждая ошибка делает тебя умнее и сильнее. Мечтай, ищи, верь. У тебя всё получится!">Сен ерекшесің! Әр күні бір жаңа нәрсе үйрен, қателерден қорықпа — себебі әр қате сені ақылды әрі мықты етеді. Арманда, ізден, сен. Сенің қолыңнан бәрі келеді!</p>
+      </div>
+      <div class="motiv parent reveal">
+        <div class="mi">💚</div>
+        <h3 data-kz="Ата-анаға" data-ru="Родителю">Ата-анаға</h3>
+        <p data-kz="Балаңызға деген сеніміңіз — оның ең үлкен күші. Біз балаңызды сүйіспеншілікпен оқытып, әрбір кішкене жетістігіне бірге қуанамыз. Балаңыздың жарқын болашағы бүгіннен басталады — біз біргеміз!" data-ru="Ваша вера в ребёнка — его самая большая сила. Мы обучаем с любовью и радуемся каждому маленькому успеху вместе. Светлое будущее вашего ребёнка начинается сегодня — мы рядом!">Балаңызға деген сеніміңіз — оның ең үлкен күші. Біз балаңызды сүйіспеншілікпен оқытып, әрбір кішкене жетістігіне бірге қуанамыз. Балаңыздың жарқын болашағы бүгіннен басталады — біз біргеміз!</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -457,12 +496,11 @@
         </div>
         <a href="#contact" class="btn btn-primary" data-kz="Лагерьге жазылу" data-ru="Записаться в лагерь">Лагерьге жазылу</a>
       </div>
-      <div class="emoji-big">🏕️☀️🎨</div>
-    </div>
-    <div class="camp-photos reveal">
-      <a href="camp1.jpg" target="_blank"><img src="camp1.jpg" alt="Жазғы лагерь — жүлделер" loading="lazy"></a>
-      <a href="camp2.jpg" target="_blank"><img src="camp2.jpg" alt="Жазғы лагерь — балалар" loading="lazy"></a>
-      <a href="camp3.jpg" target="_blank"><img src="camp3.jpg" alt="Жазғы лагерь — серуен" loading="lazy"></a>
+      <div class="camp-collage reveal">
+        <img class="c-a" src="camp1.jpg" alt="Жазғы лагерь — жүлделер" loading="lazy">
+        <img class="c-b" src="camp3.jpg" alt="Жазғы лагерь — серуен" loading="lazy">
+        <img class="c-c" src="camp2.jpg" alt="Жазғы лагерь — балалар" loading="lazy">
+      </div>
     </div>
   </div>
 </section>
