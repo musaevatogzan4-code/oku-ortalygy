@@ -292,6 +292,13 @@
   .camp-collage .c-a{top:2%;left:0;transform:rotate(-6deg);z-index:1}
   .camp-collage .c-b{top:20%;right:0;transform:rotate(6deg);z-index:3}
   .camp-collage .c-c{bottom:2%;left:16%;transform:rotate(-3deg);z-index:2}
+  .camp-extra{text-align:center;max-width:730px;margin:44px auto 0}
+  .camp-extra h3{font-family:'Baloo 2','Nunito',sans-serif;font-size:clamp(1.3rem,3.2vw,1.9rem);margin-bottom:10px}
+  .camp-extra p{color:var(--muted);font-weight:600;font-size:1.07rem}
+  .camp-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:26px}
+  .camp-gallery a{display:block;border-radius:16px;overflow:hidden;box-shadow:var(--shadow-sm)}
+  .camp-gallery img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;transition:transform .3s ease}
+  .camp-gallery a:hover img{transform:scale(1.06)}
 
   /* Reveal animation */
   .reveal{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
@@ -501,6 +508,17 @@
         <img class="c-b" src="camp3.jpg" alt="Жазғы лагерь — серуен" loading="lazy">
         <img class="c-c" src="camp2.jpg" alt="Жазғы лагерь — балалар" loading="lazy">
       </div>
+    </div>
+    <div class="camp-extra reveal">
+      <h3 data-kz="Лагерьде әр күн — жаңа қызық! 🎉" data-ru="В лагере каждый день — новое приключение! 🎉">Лагерьде әр күн — жаңа қызық! 🎉</h3>
+      <p data-kz="Балалар лагерьде еш жалықпайды: бір күні киноға, бір күні табиғатқа саяхатқа, ал кейде ойын-сауық алаңына барады. Әр күн күлкіге, қуанышқа және жаңа әсерге толы!" data-ru="Детям в лагере совсем не скучно: один день — кино, другой — поездка на природу, а иногда — игровая площадка. Каждый день полон смеха, радости и новых впечатлений!">Балалар лагерьде еш жалықпайды: бір күні киноға, бір күні табиғатқа саяхатқа, ал кейде ойын-сауық алаңына барады. Әр күн күлкіге, қуанышқа және жаңа әсерге толы!</p>
+    </div>
+    <div class="camp-gallery reveal">
+      <a href="camp4.jpg" target="_blank"><img src="camp4.jpg" alt="Лагерь — ойын алаңы" loading="lazy"></a>
+      <a href="camp5.jpg" target="_blank"><img src="camp5.jpg" alt="Лагерь — аттракцион" loading="lazy"></a>
+      <a href="camp6.jpg" target="_blank"><img src="camp6.jpg" alt="Лагерь — дәмхана" loading="lazy"></a>
+      <a href="camp7.jpg" target="_blank"><img src="camp7.jpg" alt="Лагерь — кино" loading="lazy"></a>
+      <a href="camp8.jpg" target="_blank"><img src="camp8.jpg" alt="Лагерь — карусель" loading="lazy"></a>
     </div>
   </div>
 </section>
